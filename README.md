@@ -1,6 +1,6 @@
 # TIL
 > Today I Learned
 
-### TODO
+### 1. TODO
 -------------------------
-Hugo or Vuepress로 TIL 페이지 만들기.
+1. Hugo or Vuepress로 TIL 페이지 만들기.
