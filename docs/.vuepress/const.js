@@ -1,7 +1,7 @@
 exports.JavaList = [
-    "/Java/java.md"
+    "Java/java.md"
 ];
 
 exports.SpringList = [
-    "/Spring/spring.md"  
+    "Spring/spring.md"  
 ];
