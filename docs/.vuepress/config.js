@@ -7,12 +7,8 @@ module.exports = {
     themeConfig: { //테마별 설정 항목입니다.
         sidebar: [
             {
-                title: 'Java',
-                children: CONST.JavaList
-            },
-            {
-                title: 'Spring',
-                children: CONST.SpringList
+                title: '2021',
+                children: CONST.twentyOne
             }
         ],
         nav: [

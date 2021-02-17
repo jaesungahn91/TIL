@@ -1,7 +1,3 @@
-exports.JavaList = [
-    "Java/java.md"
-];
-
-exports.SpringList = [
-    "Spring/spring.md"  
+exports.twentyOne = [
+    "2021/0217-.md"
 ];
