@@ -1,7 +1,7 @@
 var CONST = require("./const");
 
 module.exports = {
-    title: 'Today JS Learned',
+    title: 'TIL',
     description: 'Today I Learned',
     base: '/TIL/',
     themeConfig: { //테마별 설정 항목입니다.
