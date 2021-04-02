@@ -1,7 +1,7 @@
 # TIL
 > Today I Learned  
 
-[jaesungahn91.github.io/til](jaesungahn91.github.io/til)
+[jaesungahn91.github.io/til](https://jaesungahn91.github.io/TIL/)
 
 ---
 ## Static Site Generator
