@@ -2,7 +2,7 @@
 
 # master push
 git add -A
-git commit -m "til master"
+git commit -m "til"
 git push -f origin master
 
 # abort on errors
