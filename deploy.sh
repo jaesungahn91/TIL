@@ -1,11 +1,12 @@
 #!/usr/bin/env sh
 
-# abort on errors
-set -e
-
+# master push
 git add -A
 git commit -m "til master"
-git push origin master
+git push -f origin master
+
+# abort on errors
+set -e
 
 # build
 npm run build
