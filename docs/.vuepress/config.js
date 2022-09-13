@@ -7,6 +7,10 @@ module.exports = {
     themeConfig: { //테마별 설정 항목입니다.
         sidebar: [
             {
+                title: '2022',
+                children: CONST.twentyTwo
+            },
+            {
                 title: '2021',
                 children: CONST.twentyOne
             }
@@ -18,7 +22,7 @@ module.exports = {
           },
           {
             text: 'Blog', // 메뉴에 표시될 이름
-            link: 'https://js91.tistory.com/' // 링크 주소
+            link: 'https://velog.io/@ahnjs' // 링크 주소
           },
         ]
       }
