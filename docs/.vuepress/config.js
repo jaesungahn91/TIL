@@ -1,6 +1,7 @@
 var CONST = require("./const");
 
 module.exports = {
+    theme: 'theme-blog',
     title: 'TIL',
     description: 'Today I Learned',
     base: '/TIL/',
