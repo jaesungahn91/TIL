@@ -24,5 +24,8 @@
   "homepage": "https://github.com/jaesungahn91/TIL#readme",
   "devDependencies": {
     "vuepress": "^1.8.0"
+  },
+  "dependencies": {
+    "vuepress-theme-hope": "^1.30.0"
   }
 }
