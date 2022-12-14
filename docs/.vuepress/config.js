@@ -25,6 +25,7 @@ module.exports = {
             text: 'Blog', // 메뉴에 표시될 이름
             link: 'https://velog.io/@ahnjs' // 링크 주소
           },
-        ]
+        ],
+        author: "ahnjs"
       }
 }

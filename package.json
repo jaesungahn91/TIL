@@ -26,8 +26,6 @@
     "vuepress": "^1.8.0"
   },
   "dependencies": {
-    "@vuepress/theme-blog": "^2.3.3",
-    "vuepress-theme-hope": "^1.30.0",
-    "vuepress-theme-reco": "^1.6.16"
+    "vuepress-theme-hope": "^1.30.0"
   }
 }
