@@ -1,7 +1,7 @@
 var CONST = require("./const");
 
 module.exports = {
-    theme: 'vuepress-theme-reco',
+    theme: '@vuepress/blog',
     title: 'TIL',
     description: 'Today I Learned',
     base: '/TIL/',
