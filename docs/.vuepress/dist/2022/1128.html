@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>1128 ~ 1211 | TIL</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    
+    <meta name="description" content="
+1201 - Spring REST Docs + Rest Assured
+[ build.gradle ]
+
+plugins {
+    ...
+    // Asciidoctor 플러그인을 적용
+    id "org.asciidoctor.jvm.convert" version "3.3.2"
+    ...
+}
+
+configuratio ...">
+    
+    <link rel="preload" href="/TIL/assets/css/0.styles.9729072d.css" as="style"><link rel="preload" href="/TIL/assets/js/app.face42bf.js" as="script"><link rel="preload" href="/TIL/assets/js/6.5d7ec74f.js" as="script"><link rel="preload" href="/TIL/assets/js/11.eca71194.js" as="script"><link rel="preload" href="/TIL/assets/js/85.1184af6c.js" as="script"><link rel="prefetch" href="/TIL/assets/js/10.5c95ce33.js"><link rel="prefetch" href="/TIL/assets/js/12.44862a55.js"><link rel="prefetch" href="/TIL/assets/js/13.3354667d.js"><link rel="prefetch" href="/TIL/assets/js/14.ebd32721.js"><link rel="prefetch" href="/TIL/assets/js/15.9a5da76a.js"><link rel="prefetch" href="/TIL/assets/js/16.0ec9d5c5.js"><link rel="prefetch" href="/TIL/assets/js/17.197aed0f.js"><link rel="prefetch" href="/TIL/assets/js/18.ac1d8f71.js"><link rel="prefetch" href="/TIL/assets/js/19.52554e37.js"><link rel="prefetch" href="/TIL/assets/js/20.d49a3176.js"><link rel="prefetch" href="/TIL/assets/js/21.703e3b5b.js"><link rel="prefetch" href="/TIL/assets/js/22.b15b40cf.js"><link rel="prefetch" href="/TIL/assets/js/23.f660074b.js"><link rel="prefetch" href="/TIL/assets/js/24.7cae7b6d.js"><link rel="prefetch" href="/TIL/assets/js/25.4544b20e.js"><link rel="prefetch" href="/TIL/assets/js/26.1b3a0d64.js"><link rel="prefetch" href="/TIL/assets/js/27.ef321cf3.js"><link rel="prefetch" href="/TIL/assets/js/28.6559ba71.js"><link rel="prefetch" href="/TIL/assets/js/29.724725e7.js"><link rel="prefetch" href="/TIL/assets/js/3.70c77cf4.js"><link rel="prefetch" href="/TIL/assets/js/30.a52d1089.js"><link rel="prefetch" href="/TIL/assets/js/31.198eeb03.js"><link rel="prefetch" href="/TIL/assets/js/32.1c678662.js"><link rel="prefetch" href="/TIL/assets/js/33.f3411971.js"><link rel="prefetch" href="/TIL/assets/js/34.92db02e4.js"><link rel="prefetch" href="/TIL/assets/js/35.e45ae628.js"><link rel="prefetch" href="/TIL/assets/js/36.454a23c3.js"><link rel="prefetch" href="/TIL/assets/js/37.0853aeff.js"><link rel="prefetch" href="/TIL/assets/js/38.f4787dfc.js"><link rel="prefetch" href="/TIL/assets/js/39.fa931ac4.js"><link rel="prefetch" href="/TIL/assets/js/4.851786b4.js"><link rel="prefetch" href="/TIL/assets/js/40.2f2b7cc1.js"><link rel="prefetch" href="/TIL/assets/js/41.af69bea0.js"><link rel="prefetch" href="/TIL/assets/js/42.266b80d2.js"><link rel="prefetch" href="/TIL/assets/js/43.9eca0436.js"><link rel="prefetch" href="/TIL/assets/js/44.3c9dd560.js"><link rel="prefetch" href="/TIL/assets/js/45.839c0213.js"><link rel="prefetch" href="/TIL/assets/js/46.44355db1.js"><link rel="prefetch" href="/TIL/assets/js/47.fb2d1489.js"><link rel="prefetch" href="/TIL/assets/js/48.117f6110.js"><link rel="prefetch" href="/TIL/assets/js/49.f5f58c80.js"><link rel="prefetch" href="/TIL/assets/js/5.a40fa64b.js"><link rel="prefetch" href="/TIL/assets/js/50.bf663577.js"><link rel="prefetch" href="/TIL/assets/js/51.c3bdfcaa.js"><link rel="prefetch" href="/TIL/assets/js/52.5a372c16.js"><link rel="prefetch" href="/TIL/assets/js/53.796d7943.js"><link rel="prefetch" href="/TIL/assets/js/54.c46aa092.js"><link rel="prefetch" href="/TIL/assets/js/55.3e3ec3b1.js"><link rel="prefetch" href="/TIL/assets/js/56.e7675ae5.js"><link rel="prefetch" href="/TIL/assets/js/57.7e5b274a.js"><link rel="prefetch" href="/TIL/assets/js/58.8674754f.js"><link rel="prefetch" href="/TIL/assets/js/59.b922d1c3.js"><link rel="prefetch" href="/TIL/assets/js/60.7ce728db.js"><link rel="prefetch" href="/TIL/assets/js/61.e69f607b.js"><link rel="prefetch" href="/TIL/assets/js/62.f6f4222a.js"><link rel="prefetch" href="/TIL/assets/js/63.e9323ce2.js"><link rel="prefetch" href="/TIL/assets/js/64.d0c85d08.js"><link rel="prefetch" href="/TIL/assets/js/65.a9819011.js"><link rel="prefetch" href="/TIL/assets/js/66.c87d09bc.js"><link rel="prefetch" href="/TIL/assets/js/67.7ca58cbd.js"><link rel="prefetch" href="/TIL/assets/js/68.321ea5a8.js"><link rel="prefetch" href="/TIL/assets/js/69.a7741122.js"><link rel="prefetch" href="/TIL/assets/js/7.fda50c33.js"><link rel="prefetch" href="/TIL/assets/js/70.bdeee399.js"><link rel="prefetch" href="/TIL/assets/js/71.f312da68.js"><link rel="prefetch" href="/TIL/assets/js/72.91f45247.js"><link rel="prefetch" href="/TIL/assets/js/73.88953b79.js"><link rel="prefetch" href="/TIL/assets/js/74.d1611c1b.js"><link rel="prefetch" href="/TIL/assets/js/75.37f9e0f8.js"><link rel="prefetch" href="/TIL/assets/js/76.dc32c379.js"><link rel="prefetch" href="/TIL/assets/js/77.5433e0a6.js"><link rel="prefetch" href="/TIL/assets/js/78.6fda6ca0.js"><link rel="prefetch" href="/TIL/assets/js/79.3e50b7b1.js"><link rel="prefetch" href="/TIL/assets/js/8.584bc921.js"><link rel="prefetch" href="/TIL/assets/js/80.18405258.js"><link rel="prefetch" href="/TIL/assets/js/81.e4ccf68a.js"><link rel="prefetch" href="/TIL/assets/js/82.6b7c1912.js"><link rel="prefetch" href="/TIL/assets/js/83.34d29caa.js"><link rel="prefetch" href="/TIL/assets/js/84.ee39d9de.js"><link rel="prefetch" href="/TIL/assets/js/86.138caca8.js"><link rel="prefetch" href="/TIL/assets/js/87.038c2438.js"><link rel="prefetch" href="/TIL/assets/js/9.ad0ae255.js"><link rel="prefetch" href="/TIL/assets/js/vuejs-paginate.e9164293.js">
+    <link rel="stylesheet" href="/TIL/assets/css/0.styles.9729072d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/TIL/" class="nav-link home-link">TIL </a></div> <div class="header-right-wrap"><ul class="nav"><li class="nav-item"><a href="https://github.com/jaesungahn91" target="_blank" rel="noopener noreferrer" class="nav-link external">GitHub</a></li><li class="nav-item"><a href="https://velog.io/@ahnjs" target="_blank" rel="noopener noreferrer" class="nav-link external">Blog</a></li></ul> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></div></header></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/TIL/" class="nav-link mobile-home-link">TIL </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <ul class="mobile-nav"><li class="mobile-nav-item"><a href="https://github.com/jaesungahn91" target="_blank" rel="noopener noreferrer" class="nav-link external">GitHub</a></li><li class="mobile-nav-item"><a href="https://velog.io/@ahnjs" target="_blank" rel="noopener noreferrer" class="nav-link external">Blog</a></li> <li class="mobile-nav-item"><!----></li></ul></div></div></div> <div class="content-wrapper"><div><div class="content__default"><h1 id="_1128-1211"><a href="#_1128-1211" class="header-anchor">#</a> 1128 ~ 1211</h1> <h2 id="_1201-spring-rest-docs-rest-assured"><a href="#_1201-spring-rest-docs-rest-assured" class="header-anchor">#</a> 1201 - Spring REST Docs + Rest Assured</h2> <p><strong>[ build.gradle ]</strong></p> <div class="language-gradle extra-class"><pre class="language-text"><code>plugins {
+    ...
+    // Asciidoctor 플러그인을 적용
+    id &quot;org.asciidoctor.jvm.convert&quot; version &quot;3.3.2&quot;
+    ...
+}
+
+configurations {
+    ...
+    // asciidoctorExtAsciidoctor를 확장하는 종속성에 대한 구성을 선언
+    asciidoctorExt
+    ...
+}
+
+dependencies {
+    ...
+    // asciidoctorExt : spring-restdocs-asciidoctor 구성 의존성을 추가
+    // snippets을 .adoc로 가리키고 build/generated-snippets 생성되도록 자동으로 구성 
+    asciidoctorExt 'org.springframework.restdocs:spring-restdocs-asciidoctor'
+    // spring-restdocs-restassured 의존성을 추가
+    testImplementation 'org.springframework.restdocs:spring-restdocs-restassured'
+    ...
+}
+
+ext {
+    ...
+    // 생성된 스니펫의 출력 위치를 정의하도록 속성을 구성
+    set('snippetsDir', file(&quot;build/generated-snippets&quot;))
+    ...
+}
+
+tasks.named('test') {
+    outputs.dir snippetsDir
+    useJUnitPlatform()
+}
+
+
+tasks.named('asciidoctor') {
+    inputs.dir snippetsDir
+    // 	asciidoctorExt확장 에 대한 구성 사용을 구성
+    configurations 'asciidoctorExt'
+    dependsOn test
+}
+
+tasks.named('bootJar') {
+    dependsOn asciidoctor
+    // 생성된 문서를 jar static/docs디렉토리에 복사
+    copy {
+        from &quot;${asciidoctor.outputDir}&quot;
+        into 'src/main/resources/static/docs'
+    }
+}
+</code></pre></div><p><strong>[ 테스트 클래스 ]</strong></p> <ul><li>AcceptanceTest</li></ul> <div class="language-java extra-class"><pre class="language-java"><code><span class="token annotation punctuation">@SpringBootTest</span><span class="token punctuation">(</span>webEnvironment <span class="token operator">=</span> <span class="token class-name">SpringBootTest<span class="token punctuation">.</span>WebEnvironment</span><span class="token punctuation">.</span>RANDOM_PORT<span class="token punctuation">)</span>
+<span class="token annotation punctuation">@ExtendWith</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">RestDocumentationExtension</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> <span class="token class-name">SpringExtension</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AcceptanceTest</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@LocalServerPort</span>
+    <span class="token keyword">int</span> port<span class="token punctuation">;</span>
+
+    <span class="token keyword">protected</span> <span class="token class-name">RequestSpecification</span> spec<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@BeforeEach</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setUp</span><span class="token punctuation">(</span><span class="token class-name">RestDocumentationContextProvider</span> restDocumentation<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">RestAssured</span><span class="token punctuation">.</span>port <span class="token operator">=</span> port<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>spec <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RequestSpecBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">addFilter</span><span class="token punctuation">(</span><span class="token function">documentationConfiguration</span><span class="token punctuation">(</span>restDocumentation<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>OrderRestControllerTest</li></ul> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">class</span> <span class="token class-name">OrderRestControllerTest</span> <span class="token keyword">extends</span> <span class="token class-name">AcceptanceTest</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">void</span> <span class="token function">postOrder</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// given</span>
+        <span class="token class-name">String</span> menuName <span class="token operator">=</span> <span class="token string">&quot;메뉴&quot;</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// when</span>
+        <span class="token class-name">ExtractableResponse</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Response</span><span class="token punctuation">&gt;</span></span> response <span class="token operator">=</span> 주문_생성_요청<span class="token punctuation">(</span>menuName<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">OrderModel</span> order <span class="token operator">=</span> response<span class="token punctuation">.</span><span class="token function">as</span><span class="token punctuation">(</span><span class="token class-name">OrderModel</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// then</span>
+        <span class="token function">assertThat</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span><span class="token function">statusCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">isEqualTo</span><span class="token punctuation">(</span><span class="token class-name">HttpStatus</span><span class="token punctuation">.</span>OK<span class="token punctuation">.</span><span class="token function">value</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">assertThat</span><span class="token punctuation">(</span>order<span class="token punctuation">.</span><span class="token function">getMenuName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">isEqualTo</span><span class="token punctuation">(</span>menuName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token class-name">ExtractableResponse</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Response</span><span class="token punctuation">&gt;</span></span> 주문_생성_요청<span class="token punctuation">(</span><span class="token class-name">String</span> menuName<span class="token punctuation">,</span> <span class="token class-name">Integer</span> quantity<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">OrderPostRequestDTO</span> dto <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">OrderPostRequestDTO</span><span class="token punctuation">(</span>menuName<span class="token punctuation">,</span> quantity<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">return</span> <span class="token class-name">RestAssured</span>
+                <span class="token punctuation">.</span><span class="token function">given</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>spec<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">accept</span><span class="token punctuation">(</span>APPLICATION_JSON_VALUE<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token function">document</span><span class="token punctuation">(</span><span class="token string">&quot;post-order&quot;</span><span class="token punctuation">,</span>
+                        <span class="token function">requestFields</span><span class="token punctuation">(</span>
+                                <span class="token function">fieldWithPath</span><span class="token punctuation">(</span><span class="token string">&quot;order.menuName&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span>STRING<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">description</span><span class="token punctuation">(</span><span class="token string">&quot;order menu name&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                                <span class="token function">fieldWithPath</span><span class="token punctuation">(</span><span class="token string">&quot;order.quantity&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span>NUMBER<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">description</span><span class="token punctuation">(</span><span class="token string">&quot;order quantity&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                        <span class="token function">responseFields</span><span class="token punctuation">(</span>
+                                <span class="token function">fieldWithPath</span><span class="token punctuation">(</span><span class="token string">&quot;order.menuName&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span>STRING<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">description</span><span class="token punctuation">(</span><span class="token string">&quot;order menu name&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                                <span class="token function">fieldWithPath</span><span class="token punctuation">(</span><span class="token string">&quot;order.quantity&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span>NUMBER<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">description</span><span class="token punctuation">(</span><span class="token string">&quot;order quantity&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">)</span><span class="token punctuation">)</span>
+                
+                <span class="token punctuation">.</span><span class="token function">body</span><span class="token punctuation">(</span>dto<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">contentType</span><span class="token punctuation">(</span>APPLICATION_JSON_VALUE<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">when</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">&quot;/orders&quot;</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">extract</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>[ adoc 문서 작성 ]</strong></p> <ul><li>common.adoc</li></ul> <div class="language-adoc extra-class"><pre class="language-adoc"><code><span class="token inline"><span class="token url"><span class="token punctuation">[[</span>index<span class="token punctuation">]]</span></span></span>
+<span class="token title important"><span class="token punctuation">===</span> <span class="token macro"><span class="token function">link</span><span class="token punctuation">:</span>./index-docs.html<span class="token attributes"><span class="token punctuation">[</span><span class="token attr-value">HOME</span><span class="token punctuation">]</span></span></span></span>
+
+<span class="token inline"><span class="token url"><span class="token punctuation">[[</span>common<span class="token punctuation">]]</span></span></span>
+<span class="token title important"><span class="token punctuation">==</span> Common API Docs</span>
+
+<span class="token title important"><span class="token punctuation">===</span> HTTP Status Code</span>
+<span class="token attributes"><span class="token punctuation">[</span><span class="token variable">cols</span><span class="token operator">=</span><span class="token string">&quot;2,3,5&quot;</span><span class="token punctuation">]</span></span>
+<span class="token table"><span class="token punctuation">|===</span>
+<span class="token punctuation">|</span> Code <span class="token punctuation">|</span> Description <span class="token punctuation">|</span> Constraint
+
+<span class="token punctuation">|</span> 200
+<span class="token punctuation">|</span> Success
+<span class="token punctuation">|</span>
+
+<span class="token punctuation">|</span> 400
+<span class="token punctuation">|</span> Bad Request
+<span class="token punctuation">|</span>
+<span class="token punctuation">|===</span></span>
+</code></pre></div><ul><li>order.adoc</li></ul> <div class="language-adoc extra-class"><pre class="language-adoc"><code><span class="token title important"><span class="token punctuation">=</span> Order API</span>
+<span class="token attribute-entry tag">:doctype: book</span>
+<span class="token attribute-entry tag">:icons: font</span>
+<span class="token attribute-entry tag">:source-highlighter: highlightjs</span>
+<span class="token attribute-entry tag">:toc: left</span>
+<span class="token attribute-entry tag">:toclevels: 3</span>
+<span class="token attribute-entry tag">:sectlinks:</span>
+
+<span class="token macro"><span class="token function">include</span><span class="token punctuation">::</span>{docfile}/../common.adoc<span class="token attributes"><span class="token punctuation">[</span><span class="token punctuation">]</span></span></span>
+
+<span class="token title important"><span class="token punctuation">==</span> Order API Docs</span>
+
+<span class="token title important"><span class="token punctuation">===</span> POST /orders</span>
+Curl Request
+<span class="token macro"><span class="token function">include</span><span class="token punctuation">::</span>{snippets}/post-order/curl-request.adoc<span class="token attributes"><span class="token punctuation">[</span><span class="token punctuation">]</span></span></span>
+
+Request Headers
+
+Path Parameters
+
+Request Parameters
+
+Request Fields
+<span class="token macro"><span class="token function">include</span><span class="token punctuation">::</span>{snippets}/post-order/request-fields.adoc<span class="token attributes"><span class="token punctuation">[</span><span class="token punctuation">]</span></span></span>
+
+Response Fields
+<span class="token macro"><span class="token function">include</span><span class="token punctuation">::</span>{snippets}/post-order/response-fields.adoc<span class="token attributes"><span class="token punctuation">[</span><span class="token punctuation">]</span></span></span>
+
+HTTP Request
+<span class="token macro"><span class="token function">include</span><span class="token punctuation">::</span>{snippets}/post-order/http-request.adoc<span class="token attributes"><span class="token punctuation">[</span><span class="token punctuation">]</span></span></span>
+
+HTTP Response
+<span class="token macro"><span class="token function">include</span><span class="token punctuation">::</span>{snippets}/post-order/http-response.adoc<span class="token attributes"><span class="token punctuation">[</span><span class="token punctuation">]</span></span></span>
+</code></pre></div><br> <h2 id="_1205-caffeine-cache"><a href="#_1205-caffeine-cache" class="header-anchor">#</a> 1205 - Caffeine Cache</h2> <h3 id="caffeine-vs-ehcache"><a href="#caffeine-vs-ehcache" class="header-anchor">#</a> Caffeine vs EhCache</h3> <ul><li>Ehcache는 multi-level 캐시, distributed 캐시, 캐시 리스너 등과 같은 많은 기능을 지원한다.</li> <li>Caffeine은 Ehcache보다 캐시의 성능이 높으며, 실제로 더 우수한 캐시 제거 전략을 사용한다.(Window TinyLfu 퇴출 정책을 사용, 거의 최적의 적중률을 제공)</li></ul> <h3 id="caffeine-기능"><a href="#caffeine-기능" class="header-anchor">#</a> Caffeine 기능</h3> <h4 id="population-strategy"><a href="#population-strategy" class="header-anchor">#</a> <strong>[ Population Strategy ]</strong></h4> <p>캐시 추가 전략</p> <p>Caffeine Cache는 아래의 세가지 타입의 캐시로 제작하여 사용할 수 있다.</p> <ol><li>Manual</li></ol> <blockquote><p>Cache&lt;K, V&gt; cache = Caffeine.newBuilder().build()</p></blockquote> <p>엔트리를 자동 로드하는 캐시를 생성.</p> <ol start="2"><li>Loading (Synchronously)</li></ol> <blockquote><p>LoadingCache&lt;K, V&gt; cache = Caffeine.newBuilder().build(CacheLoader&lt;&gt; loader)</p></blockquote> <p>동기 방식으로 loader를 통해 캐시 생성한다.</p> <ol start="3"><li>Asynchronous Loading</li></ol> <blockquote><p>AsyncLoadingCache&lt;K, V&gt; cache = Caffeine.newBuilder().buildAsync( ... );</p></blockquote> <p>비동기 방식으로 loader를 통해 캐시 생성한다.</p> <h4 id="eviction"><a href="#eviction" class="header-anchor">#</a> <strong>[ Eviction ]</strong></h4> <p>Caffeine Cache는 아래의 세가지 타입으로 캐시를 Evict하는 설정을 할 수 있다.</p> <ol><li>Size-based</li></ol> <blockquote><p>Caffeine.newBuilder().maximumSize(long)</p></blockquote> <p>크기 기준으로 캐시를 제거하는 방식은 개발자가 설정한 특정 값을 기준으로, entries의 크기가 그 값을 넘을 떄 entries의 일부분을 제거한다.(Window TinyLfu를 적용하여 가장 최근에 사용되지 않았거나, 자주 사용되어지지 않은 것을 제거)</p> <ol start="2"><li>Time-based</li></ol> <blockquote><p>Caffeine.newBuilder().expireAfterAccess(long)<br>
+Caffeine.newBuilder().expireAfterWrite(long[, TimeUnit])<br>
+Caffeine.newBuilder().expireAfter(Expiry)</p></blockquote> <ul><li>expireAfterAccess : (캐시 생성 이후) 해당 값이 가장 최근에 대체되거나 마지막으로 읽은 후 특정 기간이 지나면 각 항목이 캐시에서 자동으로 제거되도록 지정한다.</li> <li>expireAfterWrite : 캐시 생성 후 또는 가장 최근에 바뀐 후 특정 기간이 지나면 각 항목이 캐시에서 자동으로 제거되도록 지정한다.</li> <li>expireAfter : 캐시가 생성되거나 마지막으로 업데이트된 후 지정된 시간 간격으로 캐시를 새로 고침한다.</li></ul> <ol start="3"><li>Reference-based</li></ol> <blockquote><p>Caffeine.newBuilder().weakKeys().weakValues()<br>
+Caffeine.newBuilder().softValues()</p></blockquote> <ul><li><p>Caffeine.weakKeys(), Caffeine.weakValues() : Week References를 사용하여 키를 저장한다. Week References는 키에 대한 다른 강력한 참조(Strong References)가 없는 경우 가비지 수집할 수 있다. 가비지 수집은 identity에만 의존하므로 전체 캐시가 동등성(.equals()) 대신 identity 동일성(==)을 사용하여 키를 비교한다.</p></li> <li><p>Caffeine.softValues() : Soft References를 사용하여 값을 저장한다. Soft References 오브젝트는 메모리 수요에 따라 least-recently-used 방식으로 가비지가 수집된다. 소프트 레퍼런스를 사용하면 퍼포먼스가 영향을 받기 때문에 일반적으로 예측 가능한 최대 캐시 크기를 사용하는 것이 좋다. softValues()를 사용하면 Week References와 마찬가지로 값이 equals 대신 identity(==) equality를 사용하여 비교된다.</p></li></ul> <h4 id="notification-of-removal"><a href="#notification-of-removal" class="header-anchor">#</a> <strong>[ Notification of Removal ]</strong></h4> <p>제거되는 캐시 엔트리에 대해 리스너를 달아 추가적인 작업을 할 수 있다.</p> <blockquote><p>Caffeine.newBuilder()<br>
+.evictionListener((K, V, RemovalCause) -&gt; { /* ... <em>/ })<br>
+.removalListener((K, V, RemovalCause) -&gt; { /</em> ... */ })<br>
+.build();</p></blockquote> <p>두 리스너의 차이는 캐시 관련 용어를 이해하면 적절히 사용할 수 있다.</p> <ul><li>Eviction : 캐시 정책 Policy에 의한 삭제</li> <li>Invalidation : Caller에 의한 수동 삭제</li> <li>Removal : invalidation과 eviction, 두 가지를 모두 포함</li></ul> <p>ex)</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">Cache</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Key</span><span class="token punctuation">,</span> <span class="token class-name">Graph</span><span class="token punctuation">&gt;</span></span> graphs <span class="token operator">=</span> <span class="token class-name">Caffeine</span><span class="token punctuation">.</span><span class="token function">newBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">evictionListener</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">Key</span> key<span class="token punctuation">,</span> <span class="token class-name">Graph</span> graph<span class="token punctuation">,</span> <span class="token class-name">RemovalCause</span> cause<span class="token punctuation">)</span> <span class="token operator">-&gt;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;Key %s was evicted (%s)%n&quot;</span><span class="token punctuation">,</span> key<span class="token punctuation">,</span> cause<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">removalListener</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">Key</span> key<span class="token punctuation">,</span> <span class="token class-name">Graph</span> graph<span class="token punctuation">,</span> <span class="token class-name">RemovalCause</span> cause<span class="token punctuation">)</span> <span class="token operator">-&gt;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;Key %s was removed (%s)%n&quot;</span><span class="token punctuation">,</span> key<span class="token punctuation">,</span> cause<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="compute"><a href="#compute" class="header-anchor">#</a> <strong>[ Compute ]</strong></h4> <p>외부 데이터(리소스)에 접근하며 캐시를 쓸 수 있다.</p> <blockquote><p>graphs.asMap().compute(key, (k, v) -&gt; { /* ... */ });</p></blockquote> <p>불러온 캐시 데이터를 Map으로 변경한 후 키를 차례로 조작할 수 있다.</p> <div class="language-java extra-class"><pre class="language-java"><code>graphs<span class="token punctuation">.</span><span class="token function">asMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">compute</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token punctuation">(</span>k<span class="token punctuation">,</span> v<span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token punctuation">{</span>
+  <span class="token class-name">Graph</span> graph <span class="token operator">=</span> <span class="token function">createExpensiveGraph</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token comment">// update a secondary store</span>
+  <span class="token keyword">return</span> graph<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+map<span class="token punctuation">.</span><span class="token function">compute</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token punctuation">(</span>k<span class="token punctuation">,</span> v<span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token punctuation">(</span>v <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token operator">?</span> msg <span class="token operator">:</span> v<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><h4 id="statistics"><a href="#statistics" class="header-anchor">#</a> <strong>[ Statistics ]</strong></h4> <p>캐시 액세스 통계 정보를 제공한다. 통계 정보를 사용하면 Caffeine.recordStats()를 설정해주면 된다.</p> <p>Cache.stats() 메소드가 CacheStats를 반환해준다. CacheStats는 아래와 같은 내용을 가진다.</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">class</span> <span class="token class-name">CacheStats</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">// ... </span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token keyword">long</span> hitCount<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token keyword">long</span> missCount<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token keyword">long</span> loadSuccessCount<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token keyword">long</span> loadFailureCount<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token keyword">long</span> totalLoadTime<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token keyword">long</span> evictionCount<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token keyword">long</span> evictionWeight<span class="token punctuation">;</span>
+    <span class="token comment">// ... </span>
+    <span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">hitRate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">/* ... */</span><span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">long</span> <span class="token function">evictionCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">/* ... */</span><span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">averageLoadPenalty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">/* ... */</span><span class="token punctuation">}</span>
+    <span class="token comment">// ... </span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="caffeine-configuration"><a href="#caffeine-configuration" class="header-anchor">#</a> Caffeine Configuration</h3> <ul><li>dependency</li></ul> <div class="language-maven extra-class"><pre class="language-text"><code>&lt;dependency&gt;
+  &lt;groupId&gt;com.github.ben-manes.caffeine&lt;/groupId&gt;
+  &lt;artifactId&gt;caffeine&lt;/artifactId&gt;
+  &lt;version&gt;3.0.6&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre></div><ul><li>yml</li></ul> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">cache</span><span class="token punctuation">:</span>
+    <span class="token key atrule">caffeine</span><span class="token punctuation">:</span>
+      <span class="token key atrule">spec</span><span class="token punctuation">:</span> maximumSize=500<span class="token punctuation">,</span>expireAfterWrite=5s
+    <span class="token key atrule">type</span><span class="token punctuation">:</span> caffeine
+    <span class="token key atrule">cache-names</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> users
+      <span class="token punctuation">-</span> books
+</code></pre></div><ul><li>@configuration</li></ul> <div class="language-java extra-class"><pre class="language-java"><code><span class="token annotation punctuation">@Configuration</span>
+<span class="token annotation punctuation">@EnableCaching</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CaffeineCacheConfig</span> <span class="token punctuation">{</span> <span class="token comment">/* ... */</span> <span class="token punctuation">}</span>
+</code></pre></div><p>ex)</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token annotation punctuation">@EnableCaching</span>
+<span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CacheConfig</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> <span class="token class-name">Caffeine</span> <span class="token function">caffeineConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token class-name">Caffeine</span>
+                <span class="token punctuation">.</span><span class="token function">newBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">maximumSize</span><span class="token punctuation">(</span><span class="token number">10_000</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">expireAfterWrite</span><span class="token punctuation">(</span><span class="token number">60</span><span class="token punctuation">,</span> <span class="token class-name">TimeUnit</span><span class="token punctuation">.</span>MINUTES<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> <span class="token class-name">CacheManager</span> <span class="token function">cacheManager</span><span class="token punctuation">(</span><span class="token class-name">Caffeine</span> caffeine<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">CaffeineCacheManager</span> cacheManager <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CaffeineCacheManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cacheManager<span class="token punctuation">.</span><span class="token function">setCaffeine</span><span class="token punctuation">(</span>caffeine<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> cacheManager<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><br> <h2 id="_1209-java-17"><a href="#_1209-java-17" class="header-anchor">#</a> 1209 - Java 17</h2> <ul><li>2021년 9월 출시</li> <li>LTS(Long Term Support)
+<ul><li>2018년에 등장한 11버전 이후의 새로운 LTS버전
+<ul><li>(Java 8의 종료 일정(EOL, End of Life)이 Java 11보다 뒤다)</li></ul></li></ul></li> <li></li></ul> <h3 id="jdk-17-release-notes"><a href="#jdk-17-release-notes" class="header-anchor">#</a> JDK 17 Release Notes</h3> <h4 id="jep-356-enhanced-pseudo-random-number-generators"><a href="#jep-356-enhanced-pseudo-random-number-generators" class="header-anchor">#</a> <strong>[ JEP 356: Enhanced Pseudo-Random Number Generators ]</strong></h4> <p>기본 레거시 랜덤(Java.util.Random) 클래스를 확장, 리팩토링한 <code>RandomGenerator</code> 난수 생성 API가 추가 되었다. 아래와 같은 코드로 자바 17에서 사용 가능한 알고리즘을 확인할 수 있다.</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">RandomGeneratorFactory</span><span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>factory <span class="token operator">-&gt;</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">&quot;%s: %s&quot;</span><span class="token punctuation">,</span> factory<span class="token punctuation">.</span><span class="token function">group</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> factory<span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token punctuation">.</span><span class="token function">sorted</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token operator">::</span><span class="token function">println</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language-console extra-class"><pre class="language-text"><code>LXM: L128X1024MixRandom
+LXM: L128X128MixRandom
+LXM: L128X256MixRandom
+LXM: L32X64MixRandom
+LXM: L64X1024MixRandom
+LXM: L64X128MixRandom
+LXM: L64X128StarStarRandom
+LXM: L64X256MixRandom
+Legacy: Random
+Legacy: SecureRandom
+Legacy: SplittableRandom
+Xoroshiro: Xoroshiro128PlusPlus
+Xoshiro: Xoshiro256PlusPlus
+</code></pre></div><h4 id="jep-382-new-macos-rendering-pipeline"><a href="#jep-382-new-macos-rendering-pipeline" class="header-anchor">#</a> <strong>[ JEP 382: New macOS Rendering Pipeline ]</strong></h4> <p>애플사에서 기존의 OpenGL이 아닌 Metal 이라는 새로운 렌더링 API로 대체하는 움직임에 맞춘 대응이다. 향후 MacOS 버전에서 OpenGL API를 제거하는 경우를 대비하기 위함이다. 코드 사용과 직접적인 관련은 없겠으나, MacOS에서 인텔리제이 IDE의 렌더링이 개선되지 않을까 하는 기대가 있다.</p> <h4 id="jep-398-deprecate-the-applet-api-for-removal"><a href="#jep-398-deprecate-the-applet-api-for-removal" class="header-anchor">#</a> <strong>[ JEP 398: Deprecate the Applet API for Removal ]</strong></h4> <p>애플릿(Applet) API는 자바 9에서부터 이미 @Deprecated 선언되었는데, 이번 버전에서는 forRemoval 태깅도 선언되었다.</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token annotation punctuation">@Deprecated</span><span class="token punctuation">(</span>since <span class="token operator">=</span> <span class="token string">&quot;9&quot;</span><span class="token punctuation">,</span> forRemoval <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@SuppressWarnings</span><span class="token punctuation">(</span><span class="token string">&quot;removal&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Applet</span> <span class="token keyword">extends</span> <span class="token class-name">Panel</span> <span class="token punctuation">{</span>
+	<span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="jep-403-strongly-encapsulate-jdk-internals"><a href="#jep-403-strongly-encapsulate-jdk-internals" class="header-anchor">#</a> <strong>[ JEP 403: Strongly Encapsulate JDK Internals ]</strong></h4> <p>중요한 내부 API를 제외하고는 JDK의 모든 내부 요소를 강력하게 캡슐화한다. 아래와 같은 리플렉션 코드가 더 이상 동작하지 않는다.</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">var</span> ks <span class="token operator">=</span> <span class="token class-name"><span class="token namespace">java<span class="token punctuation">.</span>security<span class="token punctuation">.</span></span>KeyStore</span><span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token string">&quot;jceks&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> f <span class="token operator">=</span> ks<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDeclaredField</span><span class="token punctuation">(</span><span class="token string">&quot;keyStoreSpi&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+f<span class="token punctuation">.</span><span class="token function">setAccessible</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="jep-406-pattern-matching-for-switch-preview"><a href="#jep-406-pattern-matching-for-switch-preview" class="header-anchor">#</a> <strong>[ JEP 406: Pattern Matching for switch (Preview) ]</strong></h4> <blockquote><p>자바 14부터 등장했던 내용인데 아직까지 프리뷰(Preview) 기능이다. 실행하려면 명령어 옵션 추가가 필요하다. (Intellij에서는 Language Level 설정을 변경하면 된다.)</p></blockquote> <p>아래 예시처럼 <code>instanceof</code>를 사용할 때 캐스팅하는 단계를 간소화할 수 있다.</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">// AS-IS: 기존의 instanceof 연산자 사용. 캐스팅이 들어간다.</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>o <span class="token keyword">instanceof</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">String</span> s <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">)</span> str<span class="token punctuation">;</span>
+    <span class="token comment">// ... 변수 s를 사용하는 코드</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// TO-BE: 형변환 과정을 없애고, 그 변수('s')를 담을 수 있다.</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>o <span class="token keyword">instanceof</span> <span class="token class-name">String</span> s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ... 변수 s를 사용하는 코드</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>그리고 <code>null</code>에 대해서도 조금 더 간편하게 핸들링할 수 있다.</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">// 기존</span>
+<span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">someMethod</span><span class="token punctuation">(</span><span class="token class-name">String</span> s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>s <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;null!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">switch</span> <span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> <span class="token string">&quot;kim&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;taeng&quot;</span> <span class="token operator">-&gt;</span> <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Hello~&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">default</span> <span class="token operator">-&gt;</span> <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Wow!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 변경</span>
+<span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">someMethod</span><span class="token punctuation">(</span><span class="token class-name">String</span> s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">switch</span> <span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> <span class="token keyword">null</span> <span class="token operator">-&gt;</span> <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;null!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> <span class="token string">&quot;kim&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;taeng&quot;</span> <span class="token operator">-&gt;</span> <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Hello~&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">default</span> <span class="token operator">-&gt;</span> <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Wow!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>더 나아가 <code>switch</code>문을 위한 패턴 매칭을 적용할 수 있다. 아래와 같은 형태의 <code>switch</code>코드를 작성할 수 있는데, 파라미터 <code>o</code>값은 <code>Long l</code>에 매칭되어 코드가 실행된다.</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">Object</span> o <span class="token operator">=</span> <span class="token number">123L</span><span class="token punctuation">;</span>
+<span class="token class-name">String</span> formatted <span class="token operator">=</span> <span class="token keyword">switch</span> <span class="token punctuation">(</span>o<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token class-name">Integer</span> i <span class="token operator">-&gt;</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">&quot;int %d&quot;</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token class-name">Long</span> l <span class="token operator">-&gt;</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">&quot;long %d&quot;</span><span class="token punctuation">,</span> l<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token class-name">Double</span> d <span class="token operator">-&gt;</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">&quot;double %f&quot;</span><span class="token punctuation">,</span> d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token class-name">String</span> s <span class="token operator">-&gt;</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">&quot;String %s&quot;</span><span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">default</span> <span class="token operator">-&gt;</span> o<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="jep-407-remove-rmi-activation"><a href="#jep-407-remove-rmi-activation" class="header-anchor">#</a> <strong>[ JEP 407: Remove RMI Activation ]</strong></h4> <p>RMI 일부 기능(java.rmi.activation 패키지)이 제거됨.</p> <h4 id="jep-409-sealed-classes"><a href="#jep-409-sealed-classes" class="header-anchor">#</a> <strong>[ JEP 409: Sealed Classes ]</strong></h4> <p>자바에서는 상속을 통해서 코드를 재사용할 수 있찌만 너무 부분별한 상속은 코드를 이해하는데 더 어려움을 줄 수 있다. 따라서 상속을 일부 제한하는 방법이 제안되었다. JEP 스펙 문서를 보면 알 수 있듯이 새로운 패러다임이기 때문에 조금 복잡하다. 내용 또한 여러 버전에 거쳐서 Preview로 소개 되었다,</p> <ul><li><a href="https://openjdk.org/jeps/360" target="_blank" rel="noopener noreferrer">JDK 15에서 Preview로 제안(JEP 360)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://openjdk.org/jeps/397" target="_blank" rel="noopener noreferrer">JDK 16에서 Second Preview로 수정제안(JEP 397)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <p>핵심은 &quot;확장(extends) 하거나 구현(implements) 할 수 있는 클래스 또는 인터페이스를 제한한다.&quot;라고 생각 하면 된다. 보통 우리 말로는 봉인 클래스 또는 봉인된 클래스로 표기한다. 이제 상속, 구현에 이은 <code>봉인</code>이라는 단어도 사용될거라 예측.</p> <p>기존에는 상속을 제한하는 방법은 final 키워드를 통해서 사용.</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// `Developer` 클래스는 확장/상속(extends)할 수 없다.</span>
+<span class="token keyword">final</span> <span class="token keyword">class</span> <span class="token class-name">Developer</span> <span class="token keyword">extends</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// `Designer` 클래스는 확장/상속(extends)할 수 없다.</span>
+<span class="token keyword">final</span> <span class="token keyword">class</span> <span class="token class-name">Designer</span> <span class="token keyword">extends</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>이번에는 다른 컨셉으로, 특정 서브 클래스에게만 확장을 허용하고 다른 클래스에는 봉인(sealed)하는 방법.</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">// `Person`는 허용된(permits) 서브 클래스만 확장할 수 있다.</span>
+<span class="token keyword">sealed</span> <span class="token keyword">class</span> <span class="token class-name">Person</span>
+    <span class="token keyword">permits</span> <span class="token class-name">Developer</span><span class="token punctuation">,</span> <span class="token class-name">Designer</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// `Developer` 클래스는 봉인이 해제되었다.</span>
+<span class="token keyword">non-sealed</span> <span class="token keyword">class</span> <span class="token class-name">Developer</span> <span class="token keyword">extends</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 봉인이 해제된 `Student` 클래스는 다른 서브 클래스에서 확장 가능하다.</span>
+<span class="token comment">// 그리고 자기 자신을 Developer 봉인(sealed)할 수 있다. </span>
+<span class="token keyword">sealed</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token keyword">extends</span> <span class="token class-name">Developer</span> 
+    <span class="token keyword">permits</span> <span class="token class-name">HighSchoolStudent</span><span class="token punctuation">,</span> <span class="token class-name">MiddleSchoolStudent</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 이 클래스는 `HighSchoolStudent`, `MiddleSchoolStudent` 클래스만 확장 가능하다.</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// permitted 서브 클래스는 확장을 못하게 하거나(final),</span>
+<span class="token comment">// 서브 클래스를 가진채로 자신을 봉인하거나(sealed), 봉인을 해제(non-sealed)해야만 한다.</span>
+<span class="token keyword">final</span> <span class="token keyword">class</span> <span class="token class-name">HighSchoolStudent</span> <span class="token keyword">extends</span> <span class="token class-name">Student</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">non-sealed</span> <span class="token keyword">class</span> <span class="token class-name">MiddleSchoolStudent</span> <span class="token keyword">extends</span> <span class="token class-name">Student</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><p>봉인 클래스를 사용하려면 아래와 같은 몇가지 규칙이 있다.</p> <ul><li>sealed 클래스와 permitted된 서브 클래스와 동일한 모듈 또는 패키지에 속해야한다.</li> <li>모든 permitted 서브 클래스는 sealed 클래스를 확장(extends)해야 한다. 그렇지 않으면 컴파일 오류가 발생한다.</li> <li>모든 permitted 서브 클래스는 수퍼 클래스에 의해 시작된 봉인을 계속할지 말지 선언해야한다.
+<ul><li>더이상 확장되지 않도록 final을 적용할 수 있다.</li> <li>non-sealed로 선언하여 다른 클래스가 확장하도록 할 수 있다.</li> <li>자기 자신도 봉인(sealed) 클래스로 선언될 수 있다.</li></ul></li></ul> <h4 id="jep-410-remove-the-experimental-aot-and-jit-compiler"><a href="#jep-410-remove-the-experimental-aot-and-jit-compiler" class="header-anchor">#</a> <strong>[ JEP 410: Remove the Experimental AOT and JIT Compiler ]</strong></h4> <p>AOT(Ahead-Of-Time), JIT(Just-In-Time) 컴파일러가 제거되었다. 대상은 <code>jdk.aot</code>, <code>jdk.internal.vm.compilerm</code>, <code>jdk.internal.vm.compiler.management</code> 이다.</p> <h4 id="jep-411-deprecate-the-security-manager-for-removal"><a href="#jep-411-deprecate-the-security-manager-for-removal" class="header-anchor">#</a> <strong>[ JEP 411: Deprecate the Security Manager for Removal ]</strong></h4> <p><code>java.lang.SecurityManager</code>와 일부 클래스에 <code>@Deprecated(forRemoval=true)</code>가 선언됨.</p> <blockquote><p>자바 14버전 Preview 중 몇 가지가 정식 반영</p></blockquote> <h4 id="jep-359-records"><a href="#jep-359-records" class="header-anchor">#</a> <strong>[ JEP 359: Records ]</strong></h4> <p><code>record</code>는 자바 16에서 스펙이 확정되어 정식 추가됨.</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">record</span> <span class="token class-name">RecordPoint</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 상속 불가(final 클래스)</span>
+
+    <span class="token comment">// 각 필드는 private final. 수정 불가</span>
+    <span class="token comment">// x = 5;</span>
+
+    <span class="token comment">// serialize 할 때는? 필드에 `@JsonProperty`를 붙여준다.</span>
+
+    <span class="token comment">// static 필드와 메서드 소유 가능</span>
+    <span class="token keyword">static</span> <span class="token keyword">int</span> MAX_LENGTH <span class="token operator">=</span> <span class="token number">25</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">getMaxLength</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> MAX_LENGTH<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 사용할 때는? 클래스와 동일하게 `new` 연산자로 인스턴스화한다.</span>
+<span class="token class-name">RecordPoint</span> recordPoint <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RecordPoint</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 그런데 getter가 자동 생성!</span>
+recordPoint<span class="token punctuation">.</span><span class="token function">x</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="jep-378-text-blocks"><a href="#jep-378-text-blocks" class="header-anchor">#</a> <strong>[ JEP 378: Text Blocks ]</strong></h4> <p>JDK 15에 정식 포함.</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">runJEP368</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">String</span> html <span class="token operator">=</span> <span class="token triple-quoted-string string">&quot;&quot;&quot;
+            {
+                &quot;list&quot;: [
+                    {
+                        &quot;title&quot;: &quot;hello, taeng&quot;,
+                        &quot;author&quot;: &quot;taeng&quot;
+                    },
+                    {
+                        &quot;title&quot;: &quot;hello, news&quot;,
+                        &quot;author&quot;: &quot;taeng&quot;
+                    }
+                ]
+            }
+            &quot;&quot;&quot;</span><span class="token punctuation">.</span><span class="token function">indent</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// indent 는 자바 12에서 추가된 것인데, 문자열 각 맨 앞 행을 n만큼 띄운다.</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>html<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>변수 매핑</li></ul> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">String</span> textBlock <span class="token operator">=</span> <span class="token triple-quoted-string string">&quot;&quot;&quot;
+        {
+            &quot;title&quot;: %s,
+            &quot;author&quot;: %s,
+            &quot;id&quot;: %d
+        }
+        &quot;&quot;&quot;</span><span class="token punctuation">.</span><span class="token function">formatted</span><span class="token punctuation">(</span><span class="token string">&quot;hi&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;taeng&quot;</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>textBlock<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div></div></div></div> <footer class="footer" data-v-3d9deeb8><div class="footer-left-wrap" data-v-3d9deeb8><ul class="contact" data-v-3d9deeb8></ul></div> <div class="footer-right-wrap" data-v-3d9deeb8><ul class="copyright" data-v-3d9deeb8></ul></div></footer></div><div class="global-ui"></div></div>
+    <script src="/TIL/assets/js/app.face42bf.js" defer></script><script src="/TIL/assets/js/6.5d7ec74f.js" defer></script><script src="/TIL/assets/js/11.eca71194.js" defer></script><script src="/TIL/assets/js/85.1184af6c.js" defer></script>
+  </body>
+</html>
