@@ -6,6 +6,7 @@ module.exports = {
     description: 'Today I Learned',
     base: '/TIL/',
     themeConfig: { //테마별 설정 항목입니다.
+        pageInfo: false,
         sidebar: [
             {
                 title: '2022',
