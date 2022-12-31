@@ -5,9 +5,13 @@ module.exports = {
     title: '안재성 TIL',
     description: 'Today I Learned',
     base: '/TIL/',
-    themeConfig: { //테마별 설정 항목입니다.
+    themeConfig: {
         pageInfo: [],
         sidebar: [
+            {
+                title: '2023',
+                children: CONST.twentyThree
+            },
             {
                 title: '2022',
                 children: CONST.twentyTwo
