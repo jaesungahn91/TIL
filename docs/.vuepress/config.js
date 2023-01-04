@@ -6,6 +6,7 @@ module.exports = {
     description: 'Today I Learned',
     base: '/TIL/',
     themeConfig: {
+        hostname: 'ahnjs',
         pageInfo: [],
         sidebar: [
             {
