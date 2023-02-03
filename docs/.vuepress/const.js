@@ -81,5 +81,6 @@ exports.twentyTwo = [
 exports.twentyThree = [
     "2023/0102.md",
     "2023/0109.md",
-    "2023/0116.md"
+    "2023/0116.md",
+    "2023/0130.md"
 ];
