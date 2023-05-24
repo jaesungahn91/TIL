@@ -2,7 +2,7 @@ var CONST = require("./const");
 
 module.exports = {
     theme: 'vuepress-theme-hope',
-    title: '안재성 TIL',
+    title: 'ahnjs TIL',
     description: 'Today I Learned',
     base: '/TIL/',
     themeConfig: {
